@@ -1,0 +1,17 @@
+pipeline {
+  agent any
+  stages {
+    stage('Cloning Git') {
+      steps {
+        git 'https://github.com/Kavish-Agnihotri/Calculator-Web-App'
+      }
+    }
+    stage('Build Executable Jar'){
+        steps {
+             sh 'mvn clean compile'
+        }
+    }
+   
+  
+  }
+}
